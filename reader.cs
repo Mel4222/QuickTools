@@ -48,7 +48,7 @@ namespace QuickTools
                                           switch (Get.IsNumber(line[Char]))
                                           {
                                                 case true:
-                                                      currentValue += line[Char];
+                                                      //currentValue += line[Char];
                                                       break;
 
                                                 case false:
