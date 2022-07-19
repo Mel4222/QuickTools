@@ -17,11 +17,13 @@ namespace QuickTools
                         This only provides the Bytes thar were
                         stored in a string file 
                     */
+                    private static  StringBuilder RowBytes = new StringBuilder(); // this will store the RowBytes devided by a ","
+                        
                     public static byte[] ReadFileBytes(string file)
                     {
                   List<object> dataList = new List<object>();
                   byte[] dataBytes;
-
+                        RowBytes.Clear(); 
                
                        
                         using (var reader = new StreamReader(file))
@@ -49,6 +51,7 @@ namespace QuickTools
                                           {
                                                 case true:
                                                       currentValue += line[Char];
+                                                                  RowBytes.Append(line[Char]+","); 
                                                       break;
 
                                                 case false:
@@ -96,11 +99,13 @@ namespace QuickTools
                      
                     public static string ReadFile(string file)
                     {
+                        RowBytes.Clear(); 
                         string data = null;
                   using (StreamReader reader = new StreamReader(file))
                   {
                         data = reader.ReadToEnd();
-                        Stored.RowData = data;  
+                        Stored.RowData = data;
+                        RowBytes.Append(data);    // this will not be faster but just to give it the same funtionality            
                   }
 
                   return data; 
