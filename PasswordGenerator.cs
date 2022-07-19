@@ -61,7 +61,7 @@ namespace QuickTools
       static Random ranOrder = new Random ();
 
 
-      public static object Secure ()
+      public static string Generate ()
       {				// this one will generate a minimum passowrd of 9 digits 
 	string password = "";
 	Random lower, upper, symbol, number;
@@ -109,7 +109,7 @@ namespace QuickTools
                   _____________________________________________                 
             */
 
-      public static object Secure (int passwordLenght)
+      public static string Generate(int passwordLenght)
       {                       // this one will generate a minimum passowrd of 9 digits 
       
       string password = "";
